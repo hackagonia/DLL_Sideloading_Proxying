@@ -3,7 +3,7 @@
 typedef PCHAR(*fnRetStr)();
 
 int main(){
-    HMODULE  hLegitDll = LoadLibraryA("Dll_Legit.dll");
+    HMODULE  hLegitDll = LoadLibraryA("Mal.dll");
     fnRetStr pRetStr   = (fnRetStr)GetProcAddress( hLegitDll, "DllGetClassObject" ); 
     PCHAR    Str       = pRetStr();
     

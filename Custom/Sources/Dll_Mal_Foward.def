@@ -1,3 +1,5 @@
-LIBRARY "Dll_Legit"
+LIBRARY "OneCoreCommonProxyStub"
 EXPORTS
-    RetStr=Dll_Legit1.RetStr @1
+    DllCanUnloadNow   = OneCoreCommonProxyStub.DllCanUnloadNow
+    DllGetClassObject = OneCoreCommonProxyStub.DllGetClassObject
+    GetProxyDllInfo   = OneCoreCommonProxyStub.GetProxyDllInfo

@@ -5,8 +5,7 @@
 // Define DLLEXPORT for easy export syntax
 #define DLLEXPORT __declspec(dllexport)
 
-// DllMain: The standard entry point for a DLL.
-// It's called by the system when the DLL is loaded or unloaded.
+// DllMain
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {
     switch (fdwReason) {
         case DLL_PROCESS_ATTACH:
@@ -30,15 +29,6 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {
     return TRUE; // Successful.
 }
 
-// DllGetClassObject: A standard COM function that provides a class factory.
-// This implementation is a stub. It prints a message and returns an error.
-// The function signature MUST match the one defined in the Windows headers.
-//
-// HRESULT: The return type, a standard COM error/success code.
-// REFCLSID rclsid: The Class ID (CLSID) of the object to create.
-// REFIID riid: The Interface ID (IID) being requested.
-// LPVOID *ppv: A pointer to receive the interface pointer.
-//
 DLLEXPORT HRESULT WINAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID *ppv) {
     // Display a message box when this function is called.
     MessageBox(NULL, "DllGetClassObject was called!", "Exported Function", MB_OK);
@@ -49,6 +39,5 @@ DLLEXPORT HRESULT WINAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID 
     *ppv = NULL;
 
     // Return a standard COM error indicating that we don't have the requested class.
-    // This is a safe and valid response for a stub function.
     return CLASS_E_CLASSNOTAVAILABLE;
 }
